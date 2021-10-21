@@ -1,3 +1,5 @@
+import { dragElement } from "./draggable.js";
+
 let mines;
 let timerInterval;
 initBoard();
@@ -9,6 +11,10 @@ function initBoard() {
   fillBlocks();
   mineRandomBlocks();
   initTimer();
+  dragElement(
+    document.getElementById("mineWindow"),
+    document.getElementById("mineToolbar")
+  );
 }
 function generateBoard() {
   const mineWindow = generateMineWindow();
